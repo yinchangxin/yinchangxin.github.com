@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Charls Yin Blog]]></title>
   <link href="http://YinChangXin.github.io/atom.xml" rel="self"/>
   <link href="http://YinChangXin.github.io/"/>
-  <updated>2014-01-14T21:18:41+08:00</updated>
+  <updated>2014-01-16T08:54:25+08:00</updated>
   <id>http://YinChangXin.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Yin Changxin]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Install Erlang]]></title>
+    <link href="http://YinChangXin.github.io/blog/2014/01/16/install-erlang/"/>
+    <updated>2014-01-16T08:28:47+08:00</updated>
+    <id>http://YinChangXin.github.io/blog/2014/01/16/install-erlang</id>
+    <content type="html"><![CDATA[<h3>Erlang依赖哪些库</h3>
+
+<ul>
+<li>A fully working GCC compiler environment</li>
+<li>Ncurses development libraries</li>
+<li>OpenSSL development libraries</li>
+</ul>
+
+
+<p>安装了这些库之后，必须要重新执行configure命令，configure之后会有提示哪些依赖的库没有安装，可以根据你的需要放弃安装一些库；上面的操作可以使用下面的命令实现：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">wget</span> <span class="ss">http</span><span class="p">:</span><span class="sr">//</span><span class="n">www</span><span class="o">.</span><span class="n">erlang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">otp_src_R13B04</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</span><span class='line'>  <span class="n">tar</span> <span class="n">xfvz</span> <span class="n">otp_src_R13B04</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</span><span class='line'>  <span class="n">cd</span> <span class="n">otp_src_R13B04</span><span class="o">/</span>
+</span><span class='line'>  <span class="o">.</span><span class="n">/configure</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">ssl</span>
+</span><span class='line'>  <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
 </feed>
