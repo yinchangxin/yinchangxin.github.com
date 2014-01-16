@@ -4,7 +4,7 @@
   <title><![CDATA[Charls Yin Blog]]></title>
   <link href="http://YinChangXin.github.io/atom.xml" rel="self"/>
   <link href="http://YinChangXin.github.io/"/>
-  <updated>2014-01-16T09:27:18+08:00</updated>
+  <updated>2014-01-16T09:32:09+08:00</updated>
   <id>http://YinChangXin.github.io/</id>
   <author>
     <name><![CDATA[Yin Changxin]]></name>
@@ -40,52 +40,58 @@ Tiny_TDS，安装和使用非常简单，推荐使用：</li>
 
 
 <p>  <code>ruby
-  $  sudo gem install tiny_tds
+  sudo gem install tiny_tds
  </code></p>
 
-<p>  用[[<a href="https://github.com/rails-sqlserver/tiny_tds|tiny_tds">https://github.com/rails-sqlserver/tiny_tds|tiny_tds</a>]]访问SQL Server很简单：</p>
+<p>  用[<a href="https://github.com/rails-sqlserver/tiny_tds">https://github.com/rails-sqlserver/tiny_tds</a>]访问SQL Server很简单：</p>
 
-<p>  &#8220;`ruby
-  require &lsquo;tiny_tds&rsquo;
-  client = TinyTds::Client.new(:username => &lsquo;fankai&rsquo;, :password => &lsquo;fankai&rsquo;, :host => &lsquo;192.168.0.1&rsquo;, :database => &lsquo;test&rsquo;)
-  result = client.execute(&ldquo;select top 10 * from User&rdquo;);
-  result.each do |row|</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="nb">require</span> <span class="s1">&#39;tiny_tds&#39;</span>
+</span><span class='line'>  <span class="n">client</span> <span class="o">=</span> <span class="ss">TinyTds</span><span class="p">:</span><span class="ss">:Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="s1">&#39;fankai&#39;</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s1">&#39;fankai&#39;</span><span class="p">,</span> <span class="ss">:host</span> <span class="o">=&gt;</span> <span class="s1">&#39;192.168.0.1&#39;</span><span class="p">,</span> <span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;select top 10 * from User&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">result</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="n">row</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>puts row
-</code></pre>
-
-<p>  end
-  &#8220;`</p>
 
 <ul>
-<li> 4.在ActiveRecord上使用Tiny_TDS
-这也非常简单，参考这个教程[[<a href="https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/wiki/Using-TinyTds|Using">https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/wiki/Using-TinyTds|Using</a> TinyTDS]]：</li>
+<li>4.在ActiveRecord上使用Tiny_TDS
+这也非常简单，
+参考这个教程<a href="Using%20TinyTDS">https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/wiki/Using-TinyTds</a>：</li>
 </ul>
 
 
-<p>  &#8220;`ruby</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="n">install</span> <span class="n">activerecord</span><span class="o">-</span><span class="n">sqlserver</span><span class="o">-</span><span class="n">adapter</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>gem install activerecord-sqlserver-adapter
-</code></pre>
 
-<p>  &#8220;`</p>
+<p>  配置database.yml如下：</p>
 
-<p>  配置database.yml如下：
-  &#8220;`ruby
-  development:</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="ss">development</span><span class="p">:</span>
+</span><span class='line'>    <span class="ss">adapter</span><span class="p">:</span> <span class="n">sqlserver</span>
+</span><span class='line'>    <span class="ss">host</span><span class="p">:</span> <span class="n">mydb</span><span class="o">.</span><span class="n">net</span>
+</span><span class='line'>    <span class="ss">database</span><span class="p">:</span> <span class="n">myapp_development</span>
+</span><span class='line'>    <span class="ss">username</span><span class="p">:</span> <span class="n">sa</span>
+</span><span class='line'>    <span class="ss">password</span><span class="p">:</span> <span class="n">secret</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>adapter: sqlserver
-host: mydb.net
-database: myapp_development
-username: sa
-password: secret    
-</code></pre>
-
-<p>  &#8220;`</p>
 
 <hr />
 
-<p>原文见[[<a href="http://robbinfan.com/blog/44/ruby-connect-sqlserver">http://robbinfan.com/blog/44/ruby-connect-sqlserver</a>]]</p>
+<p>原文见[<a href="http://robbinfan.com/blog/44/ruby-connect-sqlserver">http://robbinfan.com/blog/44/ruby-connect-sqlserver</a>]</p>
 ]]></content>
   </entry>
   
