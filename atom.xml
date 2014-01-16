@@ -4,7 +4,7 @@
   <title><![CDATA[Charls Yin Blog]]></title>
   <link href="http://YinChangXin.github.io/atom.xml" rel="self"/>
   <link href="http://YinChangXin.github.io/"/>
-  <updated>2014-01-16T09:05:32+08:00</updated>
+  <updated>2014-01-16T09:21:32+08:00</updated>
   <id>http://YinChangXin.github.io/</id>
   <author>
     <name><![CDATA[Yin Changxin]]></name>
@@ -12,6 +12,108 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[安装R]]></title>
+    <link href="http://YinChangXin.github.io/blog/2014/01/16/an-zhuang-r/"/>
+    <updated>2014-01-16T09:18:43+08:00</updated>
+    <id>http://YinChangXin.github.io/blog/2014/01/16/an-zhuang-r</id>
+    <content type="html"><![CDATA[<p>debian系统下，不建议使用编译安装方式进行安装，以避免无法生成png格式图片的错误，以下为debian系统使用aptitude安装R的过程</p>
+
+<ul>
+<li>添加R3以上版本的网络源</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">nano</span> <span class="o">-</span><span class="n">w</span> <span class="sr">/etc/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">deb</span> <span class="ss">http</span><span class="p">:</span><span class="sr">//mi</span><span class="n">rrors</span><span class="o">.</span><span class="n">ustc</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="no">CRAN</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">debian</span> <span class="n">squeeze</span><span class="o">-</span><span class="n">cran3</span><span class="o">/</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>添加key
+方式1：执行以下命令</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$　</span><span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">subkeys</span><span class="o">.</span><span class="n">pgp</span><span class="o">.</span><span class="n">net</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">key</span> <span class="mi">381</span><span class="no">BA480</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>方式2：
+ 创建名为key的文本，文本内容如下</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">-----</span><span class="k">BEGIN</span> <span class="no">PGP</span> <span class="no">PUBLIC</span> <span class="no">KEY</span> <span class="no">BLOCK</span><span class="o">-----</span>
+</span><span class='line'><span class="ss">Version</span><span class="p">:</span> <span class="no">SKS</span> <span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">mQGiBEXUFiURBADkTqPqcRYdLIguhC6fnwTvIxdkoN1UEBuPR6NYW4iJzvRSas</span><span class="o">/</span><span class="n">g5bPo5ZxE</span>
+</span><span class='line'><span class="mi">2</span><span class="n">i5BXiuVfYrSk</span><span class="o">/</span><span class="no">YiU</span><span class="o">+/</span><span class="n">lc0K6VYNDygbOfpBgGGhtfzYfFRTYNq8QsdD8L8BMYtOu5rYo5BYt</span>
+</span><span class='line'><span class="n">a0vuantIS9mn9QnH7885uy5tX</span><span class="o">/</span><span class="no">TXO7ICYVHxnFNr2wCguNtMdz9</span><span class="o">+</span><span class="no">DRQ38n4iiHzTtj</span><span class="o">/</span><span class="mi">7</span><span class="no">UHsD</span>
+</span><span class='line'><span class="sr">/0+0TLHHvY1FfakVinamR9oCm9uH9PmkGTy6jRnrvg5Z+TTgygiDdTBKPc1TqpFgoFtqh8G5</span>
+</span><span class='line'><span class="sr">DpDPbyh5GzBj8Ky1mBJb3bMwy2RUth1cztHEWI36xuCl+KrLtA4OYuCwJJZhOWDIO9aO2LW5</span>
+</span><span class='line'><span class="sr">kJhIwIuvSrEtOgTxpzy82g7eEzvLBADUrQ01fj+9VDrO2Vept8jtaGK+4kW3cBAG/</span><span class="no">UbOrTjt</span>
+</span><span class='line'><span class="mi">63</span><span class="no">VurXwyvNb6q7hKFUaVH42Fc0e64F217mutCyftPWYJwY4SR8hUmjEM</span><span class="o">/</span><span class="no">SYcezUDWWvVxmkF</span>
+</span><span class='line'><span class="mi">8</span><span class="no">M4rMhHa0j</span><span class="o">+</span><span class="n">q</span><span class="o">+</span><span class="n">et3mTKwgxehQO9hLUqRebnmJuwNqNJKb9izsPqmh83Zo7Q7Sm9oYW5uZXMg</span>
+</span><span class='line'><span class="no">UmFua2UgKENSQU4gRGViaWFuIGFyY2hpdmUpIDxqcmFua2VAdW5pLWJyZW1lbi5kZT6IRgQQ</span>
+</span><span class='line'><span class="no">EQIABgUCRdQ</span><span class="o">+</span><span class="n">nQAKCRAvD04U9kmvkJ3</span><span class="o">+</span><span class="no">AJ4xLMELB</span><span class="o">/</span><span class="n">fT1AwtR1azcH0lKg</span><span class="o">/</span><span class="no">TegCdEvtp3SUf</span>
+</span><span class='line'><span class="n">aHP3Jvg2CkzTZOatfFuIRgQQEQIABgUCS4VoCgAKCRDvfNpxC67</span><span class="o">+</span><span class="mi">5</span><span class="no">ZFyAKCAzgPTqM6sSMhB</span>
+</span><span class='line'><span class="n">iaZbNCpiVtwDrQCgjMy</span><span class="o">+</span><span class="n">iqPm7SVOCq0XJsCCbxymfB</span><span class="o">+</span><span class="no">IXgQTEQIAHgUCRdQWJQIbAwYLCQgH</span>
+</span><span class='line'><span class="no">AwIDFQIDAxYCAQIeAQIXgAAKCRAG</span><span class="o">+</span><span class="no">Q3lOBukgM09AKCuapN6slttAFRjs2</span><span class="o">/</span><span class="n">mgtaMMwO9sgCf</span>
+</span><span class='line'><span class="no">ZD2au39Oo8QLXZhZTipN8c7j9mM</span><span class="o">=</span>
+</span><span class='line'><span class="o">=</span><span class="no">BRgm</span>
+</span><span class='line'><span class="o">-----</span><span class="k">END</span> <span class="no">PGP</span> <span class="no">PUBLIC</span> <span class="no">KEY</span> <span class="no">BLOCK</span><span class="o">-----</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>添加key</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">add</span> <span class="n">key</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> 更新源列表</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">aptitude</span> <span class="n">update</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>安装R</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">aptitude</span> <span class="n">install</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">dev</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Install Erlang]]></title>
@@ -39,15 +141,6 @@
 </span><span class='line'>  <span class="n">cd</span> <span class="n">otp_src_R13B04</span><span class="o">/</span>
 </span><span class='line'>  <span class="o">.</span><span class="n">/configure</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">ssl</span>
 </span><span class='line'>  <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Linux</p>
-
-<p>Binary packages exist for Debian-based systems. On a Debian-based system, issue the following command:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">erlang</span>
 </span></code></pre></td></tr></table></div></figure>
 
 

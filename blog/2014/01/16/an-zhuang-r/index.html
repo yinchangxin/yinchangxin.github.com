@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Charls Yin Blog</title>
+	<title>安装R - Charls Yin Blog</title>
 	<meta name="author" content="Yin Changxin">
 
 	
@@ -80,18 +80,9 @@ $ nano -w /etc/apt/sources.list deb http://mirrors.ustc. &hellip;">
 	
 		
 	
-	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/01/16/an-zhuang-r/">
-		
-			安装R</a>
-	</h2>
-	<div class="entry-content">
-		<p>debian系统下，不建议使用编译安装方式进行安装，以避免无法生成png格式图片的错误，以下为debian系统使用aptitude安装R的过程</p>
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">安装R</h2>
+	<div class="entry-content"><p>debian系统下，不建议使用编译安装方式进行安装，以避免无法生成png格式图片的错误，以下为debian系统使用aptitude安装R的过程</p>
 
 <ul>
 <li>添加R3以上版本的网络源</li>
@@ -185,10 +176,7 @@ $ nano -w /etc/apt/sources.list deb http://mirrors.ustc. &hellip;">
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">aptitude</span> <span class="n">install</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">dev</span>
 </span></code></pre></td></tr></table></div></figure>
 
-
-		
-		
-	</div>
+</div>
 
 
 <div class="meta">
@@ -209,79 +197,31 @@ $ nano -w /etc/apt/sources.list deb http://mirrors.ustc. &hellip;">
 
 </div>
 	
-	<div class="comments"><a href="/blog/2014/01/16/an-zhuang-r/#disqus_thread">Comments</a></div>
+	<div class="comments"><a href="#disqus_thread">Comments</a></div>
 	
 </div>
 </article>
 
-
-    <article class="post">
-	<h2 class="title">
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
 		
-		<a href="/blog/2014/01/16/install-erlang/">
 		
-			Install Erlang</a>
-	</h2>
-	<div class="entry-content">
-		<h3>Erlang依赖哪些库</h3>
-
-<ul>
-<li>A fully working GCC compiler environment</li>
-<li>Ncurses development libraries</li>
-<li>OpenSSL development libraries</li>
-</ul>
-
-
-<p>安装了这些库之后，必须要重新执行configure命令，configure之后会有提示哪些依赖的库没有安装，可以根据你的需要放弃安装一些库；上面的操作可以使用下面的命令实现：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">wget</span> <span class="ss">http</span><span class="p">:</span><span class="sr">//</span><span class="n">www</span><span class="o">.</span><span class="n">erlang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">otp_src_R13B04</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-</span><span class='line'>  <span class="n">tar</span> <span class="n">xfvz</span> <span class="n">otp_src_R13B04</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-</span><span class='line'>  <span class="n">cd</span> <span class="n">otp_src_R13B04</span><span class="o">/</span>
-</span><span class='line'>  <span class="o">.</span><span class="n">/configure</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">ssl</span>
-</span><span class='line'>  <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
+		<a class="addthis_button_tweet"></a>
+		
 		
 		
 	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-16T08:28:47+08:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time></div>
-	<div class="tags">
-
-</div>
-	
-	<div class="comments"><a href="/blog/2014/01/16/install-erlang/#disqus_thread">Comments</a></div>
 	
 </div>
-</article>
 
-<nav id="pagenavi">
-    
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 
     Yin Changxin
@@ -300,7 +240,10 @@ $ nano -w /etc/apt/sources.list deb http://mirrors.ustc. &hellip;">
       var disqus_shortname = 'charls';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://YinChangXin.github.io/blog/2014/01/16/an-zhuang-r/';
+        var disqus_url = 'http://YinChangXin.github.io/blog/2014/01/16/an-zhuang-r/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
