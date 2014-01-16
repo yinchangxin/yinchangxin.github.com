@@ -4,7 +4,7 @@
   <title><![CDATA[Charls Yin Blog]]></title>
   <link href="http://YinChangXin.github.io/atom.xml" rel="self"/>
   <link href="http://YinChangXin.github.io/"/>
-  <updated>2014-01-16T08:54:25+08:00</updated>
+  <updated>2014-01-16T09:05:32+08:00</updated>
   <id>http://YinChangXin.github.io/</id>
   <author>
     <name><![CDATA[Yin Changxin]]></name>
@@ -39,6 +39,15 @@
 </span><span class='line'>  <span class="n">cd</span> <span class="n">otp_src_R13B04</span><span class="o">/</span>
 </span><span class='line'>  <span class="o">.</span><span class="n">/configure</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">ssl</span>
 </span><span class='line'>  <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Linux</p>
+
+<p>Binary packages exist for Debian-based systems. On a Debian-based system, issue the following command:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">erlang</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
