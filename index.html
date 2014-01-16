@@ -7,10 +7,9 @@
 	<meta name="author" content="Yin Changxin">
 
 	
-	<meta name="description" content="debian系统下，不建议使用编译安装方式进行安装，以避免无法生成png格式图片的错误，以下为debian系统使用aptitude安装R的过程 添加R3以上版本的网络源 1
-2
-$ nano -w /etc/apt/sources.list
-deb http://mirrors.ustc.edu &hellip;">
+	<meta name="description" content="因为工作需要，要分析存放在SQL Server上的数据，所以不得不研究一下如何使用Ruby访问SQL Server，发现其实还是很简单的： == 安装FreeTDS == 安装预要求的包：
+ruby
+$ aptitude install freetds-dev 3.安装Tiny_TDS &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -81,6 +80,100 @@ deb http://mirrors.ustc.edu &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/01/16/ruby-lian-jie-sql-server/">
+		
+			Ruby 连接 Sql Server</a>
+	</h2>
+	<div class="entry-content">
+		<p>因为工作需要，要分析存放在SQL Server上的数据，所以不得不研究一下如何使用Ruby访问SQL Server，发现其实还是很简单的：</p>
+
+<h2>== 安装FreeTDS ==</h2>
+
+<ul>
+<li><p>安装预要求的包：
+<code>ruby
+$ aptitude install freetds-dev
+</code></p></li>
+<li><p> 3.安装Tiny_TDS
+Tiny_TDS，安装和使用非常简单，推荐使用：
+<code>ruby
+$  sudo gem install tiny_tds
+</code></p></li>
+</ul>
+
+
+<p>  用[[<a href="https://github.com/rails-sqlserver/tiny_tds|tiny_tds">https://github.com/rails-sqlserver/tiny_tds|tiny_tds</a>]]访问SQL Server很简单：</p>
+
+<p>  &#8220;`ruby
+  require &lsquo;tiny_tds&rsquo;
+  client = TinyTds::Client.new(:username => &lsquo;fankai&rsquo;, :password => &lsquo;fankai&rsquo;, :host => &lsquo;192.168.0.1&rsquo;, :database => &lsquo;test&rsquo;)
+  result = client.execute(&ldquo;select top 10 * from User&rdquo;);
+  result.each do |row|</p>
+
+<pre><code>puts row
+</code></pre>
+
+<p>  end
+  &#8220;`</p>
+
+<ul>
+<li> 4.在ActiveRecord上使用Tiny_TDS
+这也非常简单，参考这个教程[[<a href="https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/wiki/Using-TinyTds|Using">https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/wiki/Using-TinyTds|Using</a> TinyTDS]]：
+<code>ruby
+gem install activerecord-sqlserver-adapter
+</code></li>
+</ul>
+
+
+<p>  配置database.yml如下：
+  &#8220;`ruby
+  development:</p>
+
+<pre><code>adapter: sqlserver
+host: mydb.net
+database: myapp_development
+username: sa
+password: secret    
+</code></pre>
+
+<p>  &#8220;`</p>
+
+<hr />
+
+<p>原文见[[<a href="http://robbinfan.com/blog/44/ruby-connect-sqlserver">http://robbinfan.com/blog/44/ruby-connect-sqlserver</a>]]</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-16T09:24:32+08:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+</div>
+	
+	<div class="comments"><a href="/blog/2014/01/16/ruby-lian-jie-sql-server/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
 
 
     <article class="post">
