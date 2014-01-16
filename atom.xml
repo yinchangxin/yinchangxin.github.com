@@ -4,7 +4,7 @@
   <title><![CDATA[Charls Yin Blog]]></title>
   <link href="http://YinChangXin.github.io/atom.xml" rel="self"/>
   <link href="http://YinChangXin.github.io/"/>
-  <updated>2014-01-16T09:25:32+08:00</updated>
+  <updated>2014-01-16T09:27:18+08:00</updated>
   <id>http://YinChangXin.github.io/</id>
   <author>
     <name><![CDATA[Yin Changxin]]></name>
@@ -20,20 +20,28 @@
     <id>http://YinChangXin.github.io/blog/2014/01/16/ruby-lian-jie-sql-server</id>
     <content type="html"><![CDATA[<p>因为工作需要，要分析存放在SQL Server上的数据，所以不得不研究一下如何使用Ruby访问SQL Server，发现其实还是很简单的：</p>
 
-<h2>== 安装FreeTDS ==</h2>
+<p>== 安装FreeTDS ==</p>
+
+<hr />
 
 <ul>
-<li><p>安装预要求的包：
-<code>ruby
-$ aptitude install freetds-dev
-</code></p></li>
-<li><p> 3.安装Tiny_TDS
-Tiny_TDS，安装和使用非常简单，推荐使用：
-<code>ruby
-$  sudo gem install tiny_tds
-</code></p></li>
+<li>安装预要求的包：</li>
 </ul>
 
+
+<p>  <code>ruby
+   aptitude install freetds-dev
+ </code></p>
+
+<ul>
+<li> 3.安装Tiny_TDS
+Tiny_TDS，安装和使用非常简单，推荐使用：</li>
+</ul>
+
+
+<p>  <code>ruby
+  $  sudo gem install tiny_tds
+ </code></p>
 
 <p>  用[[<a href="https://github.com/rails-sqlserver/tiny_tds|tiny_tds">https://github.com/rails-sqlserver/tiny_tds|tiny_tds</a>]]访问SQL Server很简单：</p>
 
@@ -51,12 +59,16 @@ $  sudo gem install tiny_tds
 
 <ul>
 <li> 4.在ActiveRecord上使用Tiny_TDS
-这也非常简单，参考这个教程[[<a href="https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/wiki/Using-TinyTds|Using">https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/wiki/Using-TinyTds|Using</a> TinyTDS]]：
-<code>ruby
-gem install activerecord-sqlserver-adapter
-</code></li>
+这也非常简单，参考这个教程[[<a href="https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/wiki/Using-TinyTds|Using">https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/wiki/Using-TinyTds|Using</a> TinyTDS]]：</li>
 </ul>
 
+
+<p>  &#8220;`ruby</p>
+
+<pre><code>gem install activerecord-sqlserver-adapter
+</code></pre>
+
+<p>  &#8220;`</p>
 
 <p>  配置database.yml如下：
   &#8220;`ruby
