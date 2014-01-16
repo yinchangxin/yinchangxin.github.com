@@ -121,12 +121,14 @@ Tiny_TDS，安装和使用非常简单，推荐使用：</li>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
+<span class='line-number'>7</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="nb">require</span> <span class="s1">&#39;tiny_tds&#39;</span>
 </span><span class='line'>  <span class="n">client</span> <span class="o">=</span> <span class="ss">TinyTds</span><span class="p">:</span><span class="ss">:Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="s1">&#39;fankai&#39;</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s1">&#39;fankai&#39;</span><span class="p">,</span> <span class="ss">:host</span> <span class="o">=&gt;</span> <span class="s1">&#39;192.168.0.1&#39;</span><span class="p">,</span> <span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
 </span><span class='line'>  <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;select top 10 * from User&quot;</span><span class="p">);</span>
 </span><span class='line'>  <span class="n">result</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
 </span><span class='line'>    <span class="nb">puts</span> <span class="n">row</span>
 </span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
 </span></code></pre></td></tr></table></div></figure>
 
 
