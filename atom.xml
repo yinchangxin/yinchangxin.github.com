@@ -4,7 +4,7 @@
   <title><![CDATA[Charls Yin Blog]]></title>
   <link href="http://YinChangXin.github.io/atom.xml" rel="self"/>
   <link href="http://YinChangXin.github.io/"/>
-  <updated>2014-01-21T09:55:01+08:00</updated>
+  <updated>2014-01-21T10:12:01+08:00</updated>
   <id>http://YinChangXin.github.io/</id>
   <author>
     <name><![CDATA[Yin Changxin]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JsTree jquery plugin]]></title>
+    <link href="http://YinChangXin.github.io/blog/2014/01/21/jstree-jquery-plugin/"/>
+    <updated>2014-01-21T10:02:02+08:00</updated>
+    <id>http://YinChangXin.github.io/blog/2014/01/21/jstree-jquery-plugin</id>
+    <content type="html"><![CDATA[<p>Github Address: [<a href="https://github.com/vakata/jstree">https://github.com/vakata/jstree</a>]</p>
+
+<p><img src="https://trello-attachments.s3.amazonaws.com/52afdf9d1fe235873100813d/52afe030196671d33d007f90/5467a46a1d14d10768b6fd81b2d9b614/upload_2014-01-21_at_10.11.40_am.png" alt="preview" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Make Any Ruby Object Feel Like ActiveRecord]]></title>
