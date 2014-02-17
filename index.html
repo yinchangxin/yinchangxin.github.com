@@ -7,12 +7,12 @@
 	<meta name="author" content="Yin Changxin">
 
 	
-	<meta name="description" content="2.1 安装
-SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照样使用。只是必须先安装Ruby，然后再安装SASS。
-假定你已经安装好了Ruby，接着在命令行输入下面的命令：
-　　gem install sass
-然后，就可以使用了。
-2.2 使用 &hellip;">
+	<meta name="description" content="首先引入will_paginate/array文件 config/application.rb 1
+require &#39;will_paginate/array&#39; 1
+2
+3
+4
+def index #如果数据不是 数组格式，需要转换为数组格式，别的就正常一样 @servers = &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -83,6 +83,65 @@ SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照�
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/02/17/rails-will-p-dui-shu-zu-fen-ye/">
+		
+			Rails Will_p 对数组分页</a>
+	</h2>
+	<div class="entry-content">
+		<p>首先引入will_paginate/array文件</p>
+
+<p>config/application.rb</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;will_paginate/array&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">index</span>
+</span><span class='line'>  <span class="c1">#如果数据不是 数组格式，需要转换为数组格式，别的就正常一样</span>
+</span><span class='line'>  <span class="vi">@servers</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">paginate</span> <span class="ss">:page</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:page</span><span class="o">]</span><span class="p">,</span> <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s1">&#39;created_at desc&#39;</span><span class="p">,</span> <span class="ss">:per_page</span> <span class="o">=&gt;</span> <span class="mi">5</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-17T08:25:20+08:00" pubdate data-updated="true">Feb 17<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+</div>
+	
+	<div class="comments"><a href="/blog/2014/02/17/rails-will-p-dui-shu-zu-fen-ye/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
 
 
     <article class="post">
